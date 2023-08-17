@@ -11,9 +11,8 @@ namespace ConsoleUI
         //Open Closed Principle
         static void Main(string[] args)
         {
-            //ProductTest();
-
-            CategoryTest();
+            ProductTest();
+            //CategoryTest();
 
             Console.ReadLine();
         }
@@ -31,9 +30,9 @@ namespace ConsoleUI
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetAllByCategoryId(3))
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName + "/" + product.CategoryName);
             }
         }
     }
